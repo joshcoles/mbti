@@ -1,22 +1,151 @@
-.App {
+section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 100px 80px;
+}
+
+header {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+header h1 {
+  color: #113264;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  margin: 0 0 20px 0;
+}
+
+header p {
+  color: #495057;
+  font-size: 16px;
+  line-height: 19px;
+  margin: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 740px;
+}
+
+.question,
+.email-container {
+  align-items: center;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  display: flex;
+  font-family: 'Nunito', sans-serif;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 155px;
+  padding: 0 50px;
+}
+
+.question > span {
+  color: #495057;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  margin-bottom: 25px;
+  max-width: 550px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.question .danger {
+  color: #FA4344;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.question .success {
+  color: #00A079;
+}
+
+.question input[type="radio"] {
+  display: none;
+}
+
+.question input+label {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  border: 3px solid #aaaaaa;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.question input+label:hover {
+  border-color: #999999;
+}
+
+.question input[type="radio"]:checked+label {
+  background-color: #aaaaaa;
+}
+
+.radio-container {
+  display: flex
+}
+
+.radio-container span {
+  margin: 0 25px;
+}
+
+.radio-container label {
+  margin: 0 12px;
+}
+
+.email-container {
+  box-sizing: border-box;
+  padding: 20px 85px 40px 85px;
+}
+
+.email-container input {
+  border: 2px solid #aaaaaa;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #495057;
+  font-size: 18px;
+  font-weight: bold;
+  height: 48px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.email-container input::placeholder {
+  color: #e5e5e5;
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  font-weight: bold;;
+}
+
+form > button {
+  width: 155px;
+  margin-top: 40px;
+  margin: 40px auto;
+  height: 36px;
+  background-color: #3d59fa;
+  border-radius: 3px;
   color: white;
+  cursor: pointer;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
 }
 
-.App-link {
-  color: #09d3ac;
+form > button:hover {
+  background-color: #3049d7;
+}
+
+.submission-error {
+  color: #FA4344;
+  margin-top: 10px;
 }
