@@ -1,0 +1,60 @@
+@import '../../../../sass/variables.scss';
+
+.question {
+
+  // Question prompt
+  > span {
+    color: $text-light;
+    font-family: $primary-font;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 25px;
+    max-width: 550px;
+    text-align: center;
+  }
+
+  .radio-container {
+    display: flex;
+  
+    span {
+      margin: 0 25px;
+    }
+  
+    label {
+      margin: 0 12px;
+    }
+    
+  }
+
+  // Hide webkit radio element, restyle using label
+  input[type="radio"] {
+    display: none;
+  }
+
+  input+label {
+    border: 3px solid $input-color;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    position: relative;
+    width: 20px;
+  }
+
+  input+label:hover {
+    border-color: $input-color-hover;
+  }
+
+  input[type="radio"]:checked+label {
+    background-color: $input-color;
+  }
+
+  .danger {
+    color: $danger;
+  }
+
+  .success {
+    color: $success;
+  }
+}
