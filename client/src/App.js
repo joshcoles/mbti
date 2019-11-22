@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import Questions from './components/Questions/Questions';
-import Results from './components/Results';
+import Results from './components/Results/Results';
 import {
   BrowserRouter as Router,
   Switch, 

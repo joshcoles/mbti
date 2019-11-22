@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Question from './Question';
+import Question from './Question/Question';
 import questions from '../../data/questions.json';
+import './questions.scss';
 
 const Questions = (props) => {
 
