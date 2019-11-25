@@ -1,27 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import './results.scss';
+import axios from 'axios';
 
 const Results = (props) => {
 
   const [result, setResult] = useState('ISFJ');
 
   useEffect(() => {
-  
-    
-    fetch(`http://localhost:8000/api/quizzes/${props.id}`, {
-      method: 'get',
-      headers: {
-        'Accept':'application/json',
-        'Content-Type':'application/json'
-      }
-      }).then((res) => {
-        // console.log(res.json());
-        // setResult(res)
-      })
-      // .then(() => console.log(result));
 
-
-
+    // Fetch results from API by id passed down from App
+    axios.get(`http://localhost:8000/api/quizzes/${props.id}`)
+      .then(res => {
+        setResult(res.data.result);
+      });
   });
 
 

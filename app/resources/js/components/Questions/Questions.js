@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter, Redirect } from 'react-router';
+import axios from 'axios';
 import Question from './Question/Question';
 import questions from '../../../data/questions.json';
 import './questions.scss';
@@ -56,40 +57,17 @@ const Questions = (props) => {
       ...answers
     }
 
-    const response = await fetch('http://localhost:8000/api/quizzes', {
-      method: 'post',
-      body: JSON.stringify(data),
-      headers: {
-        'Accept':'application/json',
-        'Content-Type':'application/json'
-      }
-    });
-
-    console.log(response.text());
-    
-      
-    
-    
-    // .then((res) => {
-    //   console.log(res);
-    //   props.setId(res);
-    // }).then(() => {
-    //   setHasSubmitted(true);
-    // });
-
-    //  console.log(data);
-
+    axios.post('http://localhost:8000/api/quizzes', data)
+      .then((res) => {
+        props.setId(res.data);
+      }).then(() => {
+        setHasSubmitted(true);
+      });
   }
 
   useEffect(() => {
 
-
     if (!questionError && !emailError && hasSubmitted) {
-      // return <Redirect to={{
-      //         pathname: '/results',
-      //         state: { id: '123' }
-      //     }}
-      // />
       props.history.push('/results');
     }
     
