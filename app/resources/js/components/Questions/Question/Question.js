@@ -25,7 +25,7 @@ const Question = (props) => {
 
                   // Spread previous answer state and update with new state
                   const updated = {...props.answers};
-                  updated[props.id] = num;
+                  updated[`question${props.id}`] = num;
                   props.updateAnswers(updated);
 
                   // Update local state to reflect currently selected radio UI

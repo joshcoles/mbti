@@ -27,6 +27,7 @@ class CreateQuizzesTable extends Migration
             $table->integer('question8');
             $table->integer('question9');
             $table->integer('question10');
+            $table->string('result');
         });
     }
 

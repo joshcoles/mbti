@@ -17,6 +17,7 @@ class Quiz extends Model
         'question7',
         'question8',
         'question9',
-        'question10'
+        'question10',
+        'result'
     ];
 }

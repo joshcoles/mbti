@@ -1,12 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import './results.scss';
 
-const Results = () => {
+const Results = (props) => {
 
   const [result, setResult] = useState('ISFJ');
 
   useEffect(() => {
-    console.log("Running")
+  
+    
+    fetch(`http://localhost:8000/api/quizzes/${props.id}`, {
+      method: 'get',
+      headers: {
+        'Accept':'application/json',
+        'Content-Type':'application/json'
+      }
+      }).then((res) => {
+        // console.log(res.json());
+        // setResult(res)
+      })
+      // .then(() => console.log(result));
+
+
+
   });
 
 

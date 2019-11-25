@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { withRouter, Redirect } from 'react-router';
 import Question from './Question/Question';
 import questions from '../../../data/questions.json';
 import './questions.scss';
@@ -6,7 +7,19 @@ import './questions.scss';
 const Questions = (props) => {
 
   // Set initial states for answers, email value and errors
-  const [answers, setAnswers] = useState({1: null, 2: null, 3: null, 4: null, 5: null, 6: null, 7: null, 8: null, 9: null, 10: null });
+  const [answers, setAnswers] = useState({
+    question1: null, 
+    question2: null, 
+    question3: null, 
+    question4: null, 
+    question5: null, 
+    question6: null, 
+    question7: null, 
+    question8: null, 
+    question9: null, 
+    question10: null 
+  });
+
   const [email, setEmail] = useState('');
   const [questionError, setQuestionError] = useState(false);
   const [emailError, setEmailError] = useState(false);
@@ -35,29 +48,36 @@ const Questions = (props) => {
     checkForValidEmail();
     setHasSubmitted(true);
 
-    /*
     
-    Once rest API is complete, send data over
-
+    
+    // Once rest API is complete, send data over
     const data = {
       email,
-      answers
+      ...answers
     }
 
-    fetch('http://localhost:8000/api/quizzes', {
+    const response = await fetch('http://localhost:8000/api/quizzes', {
       method: 'post',
       body: JSON.stringify(data),
       headers: {
         'Accept':'application/json',
         'Content-Type':'application/json'
       }
-    }).then((res) => {
-      console.log(res);
-    }).then(() => {
-      setHasSubmitted(true);
     });
 
-     */
+    console.log(response.text());
+    
+      
+    
+    
+    // .then((res) => {
+    //   console.log(res);
+    //   props.setId(res);
+    // }).then(() => {
+    //   setHasSubmitted(true);
+    // });
+
+    //  console.log(data);
 
   }
 
@@ -65,6 +85,11 @@ const Questions = (props) => {
 
 
     if (!questionError && !emailError && hasSubmitted) {
+      // return <Redirect to={{
+      //         pathname: '/results',
+      //         state: { id: '123' }
+      //     }}
+      // />
       props.history.push('/results');
     }
     
@@ -105,4 +130,4 @@ const Questions = (props) => {
   );
 }
 
-export default Questions;
+export default withRouter(Questions);

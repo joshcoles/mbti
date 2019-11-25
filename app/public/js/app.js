@@ -1964,7 +1964,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "/* Fonts */\n/* Colors */\n.question > span {\n  color: #495057;\n  font-family: \"Nunito\", sans-serif;\n  font-weight: bold;\n  font-size: 18px;\n  line-height: 25px;\n  margin-bottom: 25px;\n  max-width: 550px;\n  text-align: center;\n}\n.question .radio-container {\n  display: -webkit-box;\n  display: flex;\n}\n.question .radio-container span {\n  margin: 0 25px;\n}\n.question .radio-container label {\n  margin: 0 12px;\n}\n.question input[type=radio] {\n  display: none;\n}\n.question input + label {\n  border: 3px solid #aaaaaa;\n  border-radius: 50%;\n  cursor: pointer;\n  display: inline-block;\n  height: 20px;\n  position: relative;\n  width: 20px;\n}\n.question input + label:hover {\n  border-color: #999999;\n}\n.question input[type=radio]:checked + label {\n  background-color: #aaaaaa;\n}\n.question .danger {\n  color: #FA4344;\n}\n.question .success {\n  color: #00A079;\n}", ""]);
+exports.push([module.i, "/* Fonts */\n/* Colors */\n.question > span {\n  color: #495057;\n  font-family: \"Nunito\", sans-serif;\n  font-weight: bold;\n  font-size: 18px;\n  line-height: 25px;\n  margin-bottom: 25px;\n  max-width: 550px;\n  text-align: center;\n}\n.question .radio-container {\n  display: -webkit-box;\n  display: flex;\n}\n.question .radio-container span {\n  -webkit-box-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: flex;\n  margin: 0 25px;\n}\n.question .radio-container label {\n  margin: 0 12px;\n}\n.question input[type=radio] {\n  display: none;\n}\n.question input + label {\n  border: 3px solid #aaaaaa;\n  border-radius: 50%;\n  cursor: pointer;\n  display: inline-block;\n  height: 20px;\n  position: relative;\n  width: 20px;\n}\n.question input + label:hover {\n  border-color: #999999;\n}\n.question input[type=radio]:checked + label {\n  background-color: #aaaaaa;\n}\n.question .danger {\n  color: #FA4344;\n}\n.question .success {\n  color: #00A079;\n}", ""]);
 
 // exports
 
@@ -49693,7 +49693,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -56634,6 +56634,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Questions_Questions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Questions/Questions */ "./resources/js/components/Questions/Questions.js");
 /* harmony import */ var _Results_Results__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Results/Results */ "./resources/js/components/Results/Results.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -56641,13 +56649,31 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function App() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('1234'),
+      _useState2 = _slicedToArray(_useState, 2),
+      results = _useState2[0],
+      setResults = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState4 = _slicedToArray(_useState3, 2),
+      id = _useState4[0],
+      setId = _useState4[1];
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
     path: "/",
     exact: true,
-    component: _Questions_Questions__WEBPACK_IMPORTED_MODULE_2__["default"]
+    component: function component() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Questions_Questions__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        setId: setId
+      });
+    }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
     path: "/results",
-    component: _Results_Results__WEBPACK_IMPORTED_MODULE_3__["default"]
+    component: function component() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Results_Results__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        id: id
+      });
+    }
   })));
 };
 
@@ -56805,7 +56831,7 @@ var Question = function Question(props) {
         // Spread previous answer state and update with new state
         var updated = _objectSpread({}, props.answers);
 
-        updated[props.id] = num;
+        updated["question".concat(props.id)] = num;
         props.updateAnswers(updated); // Update local state to reflect currently selected radio UI
 
         setSelected(num);
@@ -56865,12 +56891,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Question_Question__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Question/Question */ "./resources/js/components/Questions/Question/Question.js");
-/* harmony import */ var _data_questions_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../data/questions.json */ "./resources/data/questions.json");
-var _data_questions_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../../../data/questions.json */ "./resources/data/questions.json", 1);
-/* harmony import */ var _questions_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./questions.scss */ "./resources/js/components/Questions/questions.scss");
-/* harmony import */ var _questions_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_questions_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var _Question_Question__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Question/Question */ "./resources/js/components/Questions/Question/Question.js");
+/* harmony import */ var _data_questions_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../data/questions.json */ "./resources/data/questions.json");
+var _data_questions_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../../../data/questions.json */ "./resources/data/questions.json", 1);
+/* harmony import */ var _questions_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./questions.scss */ "./resources/js/components/Questions/questions.scss");
+/* harmony import */ var _questions_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_questions_scss__WEBPACK_IMPORTED_MODULE_5__);
 
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
@@ -56885,19 +56918,20 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var Questions = function Questions(props) {
   // Set initial states for answers, email value and errors
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])({
-    1: null,
-    2: null,
-    3: null,
-    4: null,
-    5: null,
-    6: null,
-    7: null,
-    8: null,
-    9: null,
-    10: null
+    question1: null,
+    question2: null,
+    question3: null,
+    question4: null,
+    question5: null,
+    question6: null,
+    question7: null,
+    question8: null,
+    question9: null,
+    question10: null
   }),
       _useState2 = _slicedToArray(_useState, 2),
       answers = _useState2[0],
@@ -56942,6 +56976,7 @@ var Questions = function Questions(props) {
   };
 
   var onSubmit = function onSubmit(e) {
+    var data, response;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function onSubmit$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -56949,29 +56984,32 @@ var Questions = function Questions(props) {
             e.preventDefault();
             checkForAllAnswers();
             checkForValidEmail();
-            setHasSubmitted(true);
-            /*
-            
-            Once rest API is complete, send data over
-             const data = {
-              email,
-              answers
-            }
-             fetch('http://localhost:8000/api/quizzes', {
+            setHasSubmitted(true); // Once rest API is complete, send data over
+
+            data = _objectSpread({
+              email: email
+            }, answers);
+            _context.next = 7;
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(fetch('http://localhost:8000/api/quizzes', {
               method: 'post',
               body: JSON.stringify(data),
               headers: {
-                'Accept':'application/json',
-                'Content-Type':'application/json'
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
               }
-            }).then((res) => {
-              console.log(res);
-            }).then(() => {
-              setHasSubmitted(true);
-            });
-              */
+            }));
 
-          case 4:
+          case 7:
+            response = _context.sent;
+            console.log(response.text()); // .then((res) => {
+            //   console.log(res);
+            //   props.setId(res);
+            // }).then(() => {
+            //   setHasSubmitted(true);
+            // });
+            //  console.log(data);
+
+          case 9:
           case "end":
             return _context.stop();
         }
@@ -56981,11 +57019,16 @@ var Questions = function Questions(props) {
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     if (!questionError && !emailError && hasSubmitted) {
+      // return <Redirect to={{
+      //         pathname: '/results',
+      //         state: { id: '123' }
+      //     }}
+      // />
       props.history.push('/results');
     }
   });
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Discover your Perspective"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "Complete the 7 min test and get a detailed report of your lenses on the world.")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", null, _data_questions_json__WEBPACK_IMPORTED_MODULE_3__.map(function (question) {
-    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Question_Question__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Discover your Perspective"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "Complete the 7 min test and get a detailed report of your lenses on the world.")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", null, _data_questions_json__WEBPACK_IMPORTED_MODULE_4__.map(function (question) {
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Question_Question__WEBPACK_IMPORTED_MODULE_3__["default"], {
       prompt: question.value,
       key: question.questionId,
       answers: answers,
@@ -57013,7 +57056,7 @@ var Questions = function Questions(props) {
   }, "Save & Continue")));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Questions);
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Questions));
 
 /***/ }),
 
@@ -57071,14 +57114,22 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var Results = function Results() {
+var Results = function Results(props) {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('ISFJ'),
       _useState2 = _slicedToArray(_useState, 2),
       result = _useState2[0],
       setResult = _useState2[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    console.log("Running");
+    fetch("http://localhost:8000/api/quizzes/".concat(props.id), {
+      method: 'get',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    }).then(function (res) {// console.log(res.json());
+      // setResult(res)
+    }); // .then(() => console.log(result));
   });
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "results-container"
